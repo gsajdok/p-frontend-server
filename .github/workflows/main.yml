@@ -1,0 +1,15 @@
+name: Deploy Frontend Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    uses: gsajdok/p-workflow/.github/workflows/deploy-frontend-server.yml@main
+    secrets:
+      host: ${{ secrets.VPS_HOST }}
+      username: ${{ secrets.VPS_USER }}
+      key: ${{ secrets.VPS_SSH_KEY }}
+      passphrase: ${{ secrets.VPS_PASSPHRASE }}
